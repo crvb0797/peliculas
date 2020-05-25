@@ -38,21 +38,15 @@ body{
 .logo{
     padding-left: 40px;
     display:flex;
+  align-items: center;
 }
 
 .logo .img-logo{
-    margin-right: 10px;
-    position: relative;
     display: flex;
     align-items: center;
 }
 
 .logo .title-logo{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top:25px; 
-    left: 120px;
     font-size: 40px;
     font-weight: 500;
 }
@@ -119,21 +113,14 @@ body{
 .nav ul li a{
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
 }
 
-.icon-home{
-    font-size: 40px;
+.icon{
+    font-size: 30px;
 }
 
-.icon-tendencia {
-    font-size: 40px;
-}
-
-.icon-fav {
-    font-size: 40px;
-}
 
 .config {
     display: flex;
@@ -146,14 +133,12 @@ body{
 .config a {
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
     margin-bottom: 40px;
 }
 
-.icon-conf {
-    font-size: 40px;
-}
+
 
 /* FINALIZA EL NAV */
 
@@ -172,43 +157,45 @@ body{
 .title-area{
     font-size: 22px;
     margin-top: 20px;
-    margin-left: 40px;
     margin-bottom: 10px;
     width: 100%;
-  
+    font-size: 2em;
 }
 
 .cartelera{
     grid-area: cartelera;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 40px;
+    width: 100%;
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cartelera-movies , .tendencia-movies{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .movie{
     position: relative;
-    margin-top: 0;
+    margin: 16px;
 }
 .img-movie {
-    width: 200px;
-    
+    display: block;
+    width:100%;
 }
 
 .descripcion h2{
     font-size: 20px;
     margin-bottom: 5px;
-    font-family: 'Sulphur Point',
-    sans-serif;
+    font-family: 'Sulphur Point', sans-serif;
 }
 
 .descripcion{
-    
-    width: 200px;
+    width: 100%;
     height: 100px;
     position: absolute;
-    top: 63.5%;
+    bottom:0;
     background-color: rgba(254, 27, 27, 0.5);
     color:white;
     font-size: 15px;
@@ -217,12 +204,16 @@ body{
 
 
 .tendencia{
-     grid-area: tendencia;
+    margin-top: 2em;
+    grid-area: tendencia;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
     flex-wrap: wrap;
-     margin: 40px;
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ICONOS */
@@ -274,3 +265,81 @@ body{
 .icon-menu:before {
     content: "\e9bd";
 }
+
+
+@media screen and (max-width: 1224px) {
+
+    
+    .header {
+        height: 50px;
+        align-items: center;
+    }
+    
+    .nav, .config {
+        width: 100px;
+    }
+
+    .nav ul li a {
+        font-size: 16px;
+    }
+    
+    .nav .icon, .config .icon{
+        font-size: 20px;
+    }
+
+    .config a {
+        font-size: 16px;
+    }
+
+    .header .logo img{
+        background-color: #fff;
+        width: 30px;
+    }
+    
+    .header .logo .title-logo {
+        font-size: 1em; 
+        padding-left: 1em;
+    }
+    
+    .header .busqueda {
+        display: none;
+    }
+    
+    .user .img-user {
+        width: 30px;
+    }
+  
+  
+    .user .nombre-user{
+        display: none;
+    }
+
+    .contenido , .config, .nav{
+        margin-top: -50px;
+    }
+
+
+    
+}
+
+
+
+/* Table */
+@media screen and (max-width:750px) {
+    .cartelera-movies , .tendencia-movies{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+/* Mobile */
+@media screen and (max-width:600px) {
+    .cartelera-movies , .tendencia-movies{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
